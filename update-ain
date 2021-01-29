@@ -2,14 +2,4 @@
 
 echo -e "V1.1"
 
-echo -e "changelog"
-echo -e "added installer xderm-mini"
-echo -e "added installer speedtest"
-echo -e "added installer terminal-luci"
-echo -e "added uninstaller terminal-luci"
-echo -e "added installer theme-argon-v19"
-echo -e "added uninstaller theme-argon-v19"
-echo -e "added installer theme-argon-v18"
-echo -e "added uninstaller theme-argon-v18"
-
 
