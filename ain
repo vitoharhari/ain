@@ -1,0 +1,94 @@
+#!/bin/bash
+
+clear
+#-- colors --#
+#R='\e[1;31m' #RED
+#G='\e[1;32m' #GREEN
+#B='\e[1;34m' #BLUE
+#Y='\e[1;33m' #YELLOW
+#C='\e[1;36m' #CYAN
+W='\e[1;37m' #WHITE
+##############
+
+#-- colors v2 --#
+R='\e[31;1m' #RED
+G='\e[32;1m' #GREEN
+Y='\e[33;1m' #YELLOW
+DB='\e[34;1m' #DARKBLUE
+P='\e[35;1m' #PURPLE
+LB='\e[36;1m' #LIGHTBLUE
+
+echo -e "$Y"
+
+
+xderm-mini(){
+read -p "akan menginstall xderm-mini,apakah anda yakin? (y/n) : " an
+if [[ $an == "y" || $an == "Y" ]]; then
+echo -e "memulai penginstallan xderm-mini"
+sleep 2
+clear
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/xderm-mini/main/install-xderm-mini" -P /usr/bin/ && chmod 777 /usr/bin/install-xderm-mini && bash install-xderm-mini
+else
+clear
+echo -e "kembali ke halaman awal..."
+sleep 2
+clear
+exit
+fi
+}
+
+echo -e "$Y"
+
+update-ain(){
+if [[ $an == "y" || $an == "Y" ]]; then
+echo -e "memulai penginstallan xderm-mini"
+sleep 2
+clear
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/xderm-mini/main/install-xderm-mini" -P /usr/bin/ && chmod 777 /usr/bin/install-xderm-mini && bash install-xderm-mini
+else
+clear
+echo -e "kembali ke halaman awal..."
+sleep 2
+clear
+exit
+fi
+}
+
+echo -e "$Y"
+
+case $1 in
+"1")
+xderm-mini
+;;
+esac
+
+case $1 in
+"2")
+update-ain
+;;
+esac
+
+clear
+echo -e "$DB **************************************************"
+echo -e "$DB **************************************************"
+echo -e " **                                              **"
+echo -e "$DB **$R    SELAMAT DATANG DI AIN (AUTO INSTALLER)    $DB**"
+echo -e " **                                              **"
+echo -e "$DB **************************************************"
+echo -e "$DB **$Y     PILIH TOOLS YANG AKAN DI INSTALL!!!      $DB**"
+echo -e "$DB **************************************************"
+echo -e "$DB **$G        DAFTAR :                *  PERINTAH : $DB**"
+echo -e "$DB **$G INSTALL XDERM-MINI             *    ain 1    $DB**"
+echo -e "$DB **$G INSTALL SPEEDTEST BY OOKLA     *    ain 2    $DB**"
+echo -e "$DB **$G INSTALL TERMINAL-LUCI V19      *    ain 3    $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V19        *    ain 4    $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V19      *    ain 5    $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V18        *    ain 6    $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V18      *    ain 7    $DB**"
+echo -e "$DB **$G UPDATE AIN KE VERSI TERBARU    *    ain 8    $DB**"
+echo -e "$DB **************************************************"
+echo -e "$DB **$Y       AIN V1.1$DB *$Y COPYRIGHT$R @$Y VITO H.S        $DB**"
+echo -e "$DB **************************************************"
+echo -e "$DB **************************************************"
+echo -e "$Y"
+exit
