@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo -e "V1.1"
+echo -e "V1.2"
 echo -e ""
+echo -e "Test"
+echo -e "Test"
 echo -e "Test"
 
 
