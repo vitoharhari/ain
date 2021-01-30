@@ -19,12 +19,12 @@ P='\e[35;1m' #PURPLE
 LB='\e[36;1m' #LIGHTBLUE
 
 #-- colors v3 --#
-BR='\e[7;31m' #RED
-BG='\e[7;32m' #GREEN
-BY='\e[7;33m' #YELLOW
-BDB='\e[7;34m' #DARKBLUE
-BP='\e[7;35m' #PURPLE
-BLB='\e[7;36m' #LIGHTBLUE
+BR='\e[3;31m' #RED
+BG='\e[3;32m' #GREEN
+BY='\e[3;33m' #YELLOW
+BDB='\e[3;34m' #DARKBLUE
+BP='\e[3;35m' #PURPLE
+BLB='\e[3;36m' #LIGHTBLUE
 
 echo -e "$Y"
 xderm-mini(){
@@ -162,43 +162,44 @@ clear
 exit
 fi
 }
-echo -e "$Y"
+echo -e ""
 update-ain(){
 rm -rf /usr/bin/update-ain &> /dev/null
-echo -e "$Y mengecek versi AIN"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/update-ain" -P /usr/bin &> /dev/null
+echo -e " mengecek versi AIN"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/update-ain" -P /usr/bin &> /dev/null
 an=$(cat /usr/bin/update-ain)
 if [[ $an == *"1.1"* ]]; then
-echo -e "$Y AIN sudah\e[7;31m versi terbaru\e[Om"
+echo -e " AIN sudah\e[3;31m versi terbaru\e[Om"
 sleep 2
 exit
 else
-echo -e "\e[7;32m sedang memperbaharui...\e[Om"
+echo -e "\e[3;32m sedang memperbaharui...\e[Om"
 fi
 rm -rf /usr/bin/update-ain &> /dev/null
 an=$(find /usr/bin)
 if [[ $an ==  *"ain"* ]]; then
 rm -rf /usr/bin/ain &> /dev/null
-echo -e "\e[7;32m memperbaharui\e[Om"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/ain" -P /usr/bin &> /dev/null
+echo -e "\e[3;32m memperbaharui\e[Om"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/ain" -P /usr/bin &> /dev/null
 chmod 777 /usr/bin/ain &> /dev/null
-echo -e "\e[7;36m update selesai\e[Om"
+echo -e "\e[3;36m update selesai\e[Om"
 sleep 2
 echo -e "$BR changelog V1.1"
-echo -e "$Y added$BLB installer xderm-mini"
-echo -e "$Y added$BLB installer speedtest"
-echo -e "$Y added$BLB installer terminal-luci"
-echo -e "$Y added$BLB uninstaller terminal-luci"
-echo -e "$Y added$BLB installer theme-argon-v19"
-echo -e "$Y added$BLB uninstaller theme-argon-v19"
-echo -e "$Y added$BLB installer theme-argon-v18"
-echo -e "$Y added$BLB uninstaller theme-argon-v18"
-echo -e "$W"
+echo -e ""
+echo -e " added$BLB installer xderm-mini"
+echo -e " added$BLB installer speedtest"
+echo -e " added$BLB installer terminal-luci"
+echo -e " added$BLB uninstaller terminal-luci"
+echo -e " added$BLB installer theme-argon-v19"
+echo -e " added$BLB uninstaller theme-argon-v19"
+echo -e " added$BLB installer theme-argon-v18"
+echo -e " added$BLB uninstaller theme-argon-v18"
+echo -e ""
 else
 echo -e ""
 sleep 1
 fi
 exit
 }
-echo -e "$Y"
+
 banner(){
 clear
 echo -e "$DB **************************************************"
@@ -223,7 +224,7 @@ echo -e "$DB **************************************************"
 echo -e "$DB **$Y       AIN V1.1$DB *$Y COPYRIGHT$R @$Y VITO H.S        $DB**"
 echo -e "$DB **************************************************"
 echo -e "$DB **************************************************"
-echo -e "$Y"
+echo -e ""
 }
 
 case $1 in
