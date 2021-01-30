@@ -166,6 +166,7 @@ echo -e "$Y"
 update-ain(){
 rm -rf /usr/bin/update-ain &> /dev/null
 echo -e " mengecek versi AIN"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/update-ain" -P /usr/bin &> /dev/null
+sleep 1
 an=$(cat /usr/bin/update-ain)
 if [[ $an == *"1.1"* ]]; then
 echo -e " AIN sudah$R versi terbaru"
@@ -173,15 +174,18 @@ sleep 2
 exit
 else
 echo -e "$P sedang memperbaharui..."
+sleep 1
 fi
 rm -rf /usr/bin/update-ain &> /dev/null
 an=$(find /usr/bin)
 if [[ $an ==  *"ain"* ]]; then
 rm -rf /usr/bin/ain &> /dev/null
-echo -e "$G memperbaharui"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/ain" -P /usr/bin &> /dev/null
+echo -e "$G memperbaharui..."; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/ain" -P /usr/bin &> /dev/null
+sleep 1
 chmod 777 /usr/bin/ain &> /dev/null
 echo -e "$LB update selesai"
 sleep 2
+echo -e ""
 echo -e "$R changelog V1.1"
 echo -e "$LB"
 echo -e " added installer xderm-mini"
