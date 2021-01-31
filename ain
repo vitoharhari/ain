@@ -187,6 +187,7 @@ sleep 1
 an=$(cat /usr/bin/update-ain)
 if [[ $an == *"1.1"* ]]; then
 echo -e " AIN sudah$R versi terbaru"
+rm -rf /usr/bin/update-ain &> /dev/null
 echo -e "$Y"
 sleep 2
 exit
