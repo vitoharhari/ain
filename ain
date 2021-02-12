@@ -61,6 +61,57 @@ exit
 fi
 }
 echo -e "$Y"
+fix-xderm-mini-gui(){
+read -p "akan memperbaiki xderm-mini-gui,apakah anda yakin? (y/n) : " an
+if [[ $an == "y" || $an == "Y" ]]; then
+echo -e "memulai perbaikan xderm-mini-gui"
+sleep 2
+clear
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/xderm-mini-gui/main/fix-xderm-mini-gui" -P /root/ && chmod 777 /root/fix-xderm-mini-gui && bash fix-xderm-mini-gui
+sleep 2
+else
+clear
+echo -e "kembali ke halaman awal..."
+sleep 2
+clear
+exit
+fi
+}
+echo -e "$Y"
+install-login-page(){
+read -p "akan menginstall login page xderm-mini-gui,apakah anda yakin? (y/n) : " an
+if [[ $an == "y" || $an == "Y" ]]; then
+echo -e "memulai penginstallan login page xderm-mini-gui"
+sleep 2
+clear
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/xderm-mini-gui/main/install-login-page" -P /root/ && chmod 777 /root/install-login-page && bash install-login-page
+sleep 2
+else
+clear
+echo -e "kembali ke halaman awal..."
+sleep 2
+clear
+exit
+fi
+}
+echo -e "$Y"
+remove-login-page(){
+read -p "akan menghapus login page xderm-mini-gui,apakah anda yakin? (y/n) : " an
+if [[ $an == "y" || $an == "Y" ]]; then
+echo -e "memulai penghapusan login page xderm-mini-gui"
+sleep 2
+clear
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/xderm-mini-gui/main/remove-login-page" -P /root/ && chmod 777 /root/remove-login-page && bash remove-login-page
+sleep 2
+else
+clear
+echo -e "kembali ke halaman awal..."
+sleep 2
+clear
+exit
+fi
+}
+echo -e "$Y"
 speedtest(){
 read -p "akan menginstall speedtest,apakah anda yakin? (y/n) : " an
 if [[ $an == "y" || $an == "Y" ]]; then
@@ -185,11 +236,12 @@ rm -rf /usr/bin/update-ain &> /dev/null
 echo -e " mengecek versi AIN"; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/update-ain" -P /usr/bin &> /dev/null
 sleep 1
 an=$(cat /usr/bin/update-ain)
-if [[ $an == *"1.1"* ]]; then
+if [[ $an == *"1.2"* ]]; then
 echo -e " AIN sudah$R versi terbaru"
 rm -rf /usr/bin/update-ain &> /dev/null
 echo -e "$Y"
 sleep 2
+ain
 exit
 else
 echo -e "$P sedang memperbaharui..."
@@ -205,51 +257,51 @@ chmod 777 /usr/bin/ain &> /dev/null
 echo -e "$LB update selesai"
 sleep 2
 echo -e ""
-echo -e "$R changelog V1.1"
-echo -e "$LB"
-echo -e " added installer xderm-mini"
-echo -e " added installer xderm-mini-gui"
-echo -e " added installer speedtest"
-echo -e " added installer terminal-luci"
-echo -e " added uninstaller terminal-luci"
-echo -e " added installer theme-argon-v19"
-echo -e " added uninstaller theme-argon-v19"
-echo -e " added installer theme-argon-v18"
-echo -e " added uninstaller theme-argon-v18"
-echo -e "$Y"
 else
-echo -e ""
+echo -e "$G memperbaharui..."; wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/ain" -P /usr/bin &> /dev/null
+sleep 1
+chmod 777 /usr/bin/ain &> /dev/null
+echo -e "$LB update selesai"
 sleep 1
 fi
-exit
 }
 
 banner(){
 clear
-echo -e "$DB **************************************************"
-echo -e "$DB **************************************************"
-echo -e " **                                              **"
-echo -e "$DB **$R    SELAMAT DATANG DI AIN (AUTO INSTALLER)    $DB**"
-echo -e " **                                              **"
-echo -e "$DB **************************************************"
-echo -e "$DB **$Y     PILIH TOOLS YANG AKAN DI INSTALL!!!      $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **$G        DAFTAR :                *  PERINTAH : $DB**"
-echo -e "$DB **$G INSTALL XDERM-MINI             *    ain 1    $DB**"
-echo -e "$DB **$G INSTALL XDERM-MINI-GUI         *    ain 2    $DB**"
-echo -e "$DB **$G INSTALL SPEEDTEST BY OOKLA     *    ain 3    $DB**"
-echo -e "$DB **$G INSTALL TERMINAL-LUCI V19      *    ain 4    $DB**"
-echo -e "$DB **$G UNINSTALL TERMINAL-LUCI V19    *    ain 5    $DB**"
-echo -e "$DB **$G INSTALL ARGON THEME V19        *    ain 6    $DB**"
-echo -e "$DB **$G UNINSTALL ARGON THEME V19      *    ain 7    $DB**"
-echo -e "$DB **$G INSTALL ARGON THEME V18        *    ain 8    $DB**"
-echo -e "$DB **$G UNINSTALL ARGON THEME V18      *    ain 9    $DB**"
-echo -e "$DB **$G UPDATE AIN KE VERSI TERBARU    *    ain 10   $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **$Y       AIN V1.1$DB *$Y COPYRIGHT$R @$Y VITO H.S        $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **************************************************"
+echo -e "$DB ******************************************************"
+echo -e "$DB ******************************************************"
+echo -e " **                                                  **"
+echo -e "$DB **$R      SELAMAT DATANG DI AIN (AUTO INSTALLER)      $DB**"
+echo -e " **                                                  **"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$Y       PILIH TOOLS YANG AKAN DI INSTALL!!!        $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$G        DAFTAR :                    *  PERINTAH : $DB**"
+echo -e "$DB **$G INSTALL XDERM-MINI                 *    ain 1    $DB**"
+echo -e "$DB **$G INSTALL XDERM-MINI-GUI             *    ain 2    $DB**"
+echo -e "$DB **$G FIX DOWNLOAD PHP XDERM-MINI-GUI    *    ain 3    $DB**"
+echo -e "$DB **$G INSTALL LOGIN XDERM-MINI-GUI       *    ain 4    $DB**"
+echo -e "$DB **$G REMOVE LOGIN XDERM-MINI-GUI        *    ain 5    $DB**"
+echo -e "$DB **$G INSTALL SPEEDTEST BY OOKLA         *    ain 6    $DB**"
+echo -e "$DB **$G INSTALL TERMINAL-LUCI V19          *    ain 7    $DB**"
+echo -e "$DB **$G UNINSTALL TERMINAL-LUCI V19        *    ain 8    $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V19            *    ain 9    $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V19          *    ain 10   $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V18            *    ain 11   $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V18          *    ain 12   $DB**"
+echo -e "$DB **$G UPDATE AIN KE VERSI TERBARU        *    ain 13   $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$Y         AIN V1.2$DB *$Y COPYRIGHT$R @$Y VITO H.S          $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB ******************************************************"
 echo -e "$Y"
+}
+
+perubahan(){
+wget --no-check-certificate "https://raw.githubusercontent.com/vitoharhari/ain/main/changelog-ain" -P /root/ -q
+chmod 777 /root/changelog-ain
+bash /root/changelog-ain
+rm -rf /root/changelog-ain
 }
 
 case $1 in
@@ -266,77 +318,98 @@ esac
 
 case $1 in
 "3")
-speedtest;exit
+fix-xderm-mini-gui;exit
 ;;
 esac
 
 case $1 in
 "4")
-install-terminal-luci;exit
+install-login-page;exit
 ;;
 esac
 
 case $1 in
 "5")
-uninstall-terminal-luci;exit
+remove-login-page;exit
 ;;
 esac
 
 case $1 in
 "6")
-install-argonv19;exit
+speedtest;exit
 ;;
 esac
 
 case $1 in
 "7")
-uninstall-argonv19;exit
+install-terminal-luci;exit
 ;;
 esac
 
 case $1 in
 "8")
-install-argonv18;exit
+uninstall-terminal-luci;exit
 ;;
 esac
 
 case $1 in
 "9")
-uninstall-argonv18;exit
+install-argonv19;exit
 ;;
 esac
 
 case $1 in
 "10")
-banner;update-ain
+uninstall-argonv19;exit
+;;
+esac
+
+case $1 in
+"11")
+install-argonv18;exit
+;;
+esac
+
+case $1 in
+"12")
+uninstall-argonv18;exit
+;;
+esac
+
+case $1 in
+"13")
+update-ain;perubahan;exit
 ;;
 esac
 
 
 
 clear
-echo -e "$DB **************************************************"
-echo -e "$DB **************************************************"
-echo -e " **                                              **"
-echo -e "$DB **$R    SELAMAT DATANG DI AIN (AUTO INSTALLER)    $DB**"
-echo -e " **                                              **"
-echo -e "$DB **************************************************"
-echo -e "$DB **$Y     PILIH TOOLS YANG AKAN DI INSTALL!!!      $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **$G        DAFTAR :                *  PERINTAH : $DB**"
-echo -e "$DB **$G INSTALL XDERM-MINI             *    ain 1    $DB**"
-echo -e "$DB **$G INSTALL XDERM-MINI-GUI         *    ain 2    $DB**"
-echo -e "$DB **$G INSTALL SPEEDTEST BY OOKLA     *    ain 3    $DB**"
-echo -e "$DB **$G INSTALL TERMINAL-LUCI V19      *    ain 4    $DB**"
-echo -e "$DB **$G UNINSTALL TERMINAL-LUCI V19    *    ain 5    $DB**"
-echo -e "$DB **$G INSTALL ARGON THEME V19        *    ain 6    $DB**"
-echo -e "$DB **$G UNINSTALL ARGON THEME V19      *    ain 7    $DB**"
-echo -e "$DB **$G INSTALL ARGON THEME V18        *    ain 8    $DB**"
-echo -e "$DB **$G UNINSTALL ARGON THEME V18      *    ain 9    $DB**"
-echo -e "$DB **$G UPDATE AIN KE VERSI TERBARU    *    ain 10   $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **$Y       AIN V1.1$DB *$Y COPYRIGHT$R @$Y VITO H.S        $DB**"
-echo -e "$DB **************************************************"
-echo -e "$DB **************************************************"
+echo -e "$DB ******************************************************"
+echo -e "$DB ******************************************************"
+echo -e " **                                                  **"
+echo -e "$DB **$R      SELAMAT DATANG DI AIN (AUTO INSTALLER)      $DB**"
+echo -e " **                                                  **"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$Y       PILIH TOOLS YANG AKAN DI INSTALL!!!        $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$G        DAFTAR :                    *  PERINTAH : $DB**"
+echo -e "$DB **$G INSTALL XDERM-MINI                 *    ain 1    $DB**"
+echo -e "$DB **$G INSTALL XDERM-MINI-GUI             *    ain 2    $DB**"
+echo -e "$DB **$G FIX DOWNLOAD PHP XDERM-MINI-GUI    *    ain 3    $DB**"
+echo -e "$DB **$G INSTALL LOGIN XDERM-MINI-GUI       *    ain 4    $DB**"
+echo -e "$DB **$G REMOVE LOGIN XDERM-MINI-GUI        *    ain 5    $DB**"
+echo -e "$DB **$G INSTALL SPEEDTEST BY OOKLA         *    ain 6    $DB**"
+echo -e "$DB **$G INSTALL TERMINAL-LUCI V19          *    ain 7    $DB**"
+echo -e "$DB **$G UNINSTALL TERMINAL-LUCI V19        *    ain 8    $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V19            *    ain 9    $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V19          *    ain 10   $DB**"
+echo -e "$DB **$G INSTALL ARGON THEME V18            *    ain 11   $DB**"
+echo -e "$DB **$G UNINSTALL ARGON THEME V18          *    ain 12   $DB**"
+echo -e "$DB **$G UPDATE AIN KE VERSI TERBARU        *    ain 13   $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB **$Y         AIN V1.2$DB *$Y COPYRIGHT$R @$Y VITO H.S          $DB**"
+echo -e "$DB ******************************************************"
+echo -e "$DB ******************************************************"
 echo -e "$Y"
 exit
