@@ -39,5 +39,5 @@ echo -e "$R ketik ain pada terminal untuk menjalankan tools AIN"
 sleep 2
 echo -e "$Y terima kasih dan sampai jumpa di auto installer selanjutnya"
 sleep 2
-ain 10
+ain 13
 rm -rf /root/install-ain
